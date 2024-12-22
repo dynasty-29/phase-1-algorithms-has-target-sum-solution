@@ -1,7 +1,22 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+  const viewed = new Set();
 
+  //now the for loop
+  //The function should return true if any pair of numbers in the array adds up to the target number
+  for (let e of array){
+    //checking if they add up
+    const addsUp = target - e;
+    //condition
+    if(viewed.has(addsUp)){
+      return true;
+    }
+    viewed.add(e);
+  }
+  return false;
+}
+console.log(hasTargetSum([1,2,5], 4));
+console.log(hasTargetSum([4], 4));
 /* 
   Write the Big O time complexity of your function here
 */
